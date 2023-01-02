@@ -1,0 +1,185 @@
+@import "../../styles/colors.scss";
+
+@mixin button($visible) {
+  font-size: 0.8rem;
+  height: 4vh;
+  padding-inline: 2vw;
+  border-radius: 100px;
+  background: linear-gradient(
+    90.55deg,
+    $--bs-purple1 -3.69%,
+    $--bs-purple1 -3.67%,
+    $--bs-fusia 100.46%
+  );
+  margin-bottom: 3.5vh;
+  margin-top: 1.5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+
+  @if $visible==yes {
+    gap: 1em;
+    padding-right: 0.9vw;
+    .ok-right-icon {
+      display: flex;
+    }
+  } @else if $visible==no {
+    .ok-right-icon {
+      display: none;
+    }
+  }
+}
+
+@mixin icon($icon: false) {
+  .icon {
+    display: none;
+  }
+  @if $icon {
+    .icon {
+      display: flex;
+    }
+  }
+}
+.header {
+  padding: 1rem;
+  .header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 8vw;
+
+    .header-logo {
+      .logo {
+        width: 9vw;
+      }
+    }
+
+    .header-button {
+      @include button(no);
+
+      &:hover {
+        @include button(yes);
+        // width: 3 vw;
+      }
+      i {
+        // position: absolute;
+        // margin-left: 6.7vw;
+        .ok-right-icon {
+          font-size: 1em;
+          width: 1.2em;
+          height: 1.4em;
+        }
+      }
+    }
+
+    .header-list {
+      .header-list-items {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        gap: 8vw;
+        padding: 0;
+        height: 3vw;
+
+        .support-list {
+          display: flex;
+          justify-content: center;
+          .support-dropdown {
+            display: none;
+            position: absolute;
+            list-style-type: none;
+            width: 13vw;
+            margin-top: 12vw;
+            height: 8vw;
+            background-color: white;
+            z-index: 812312;
+            filter: drop-shadow(0px 4px 20px rgba(225, 217, 232, 0.25));
+
+            .dropdown-item {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              gap: 1vw;
+              justify-content: space-evenly;
+              cursor: pointer;
+              @include icon(false);
+
+              &:hover {
+                @include icon(true);
+              }
+              .item {
+                display: flex;
+                align-items: center;
+                gap: 1vw;
+                .item-img {
+                  width: 1.4vw;
+                  margin-left: 0.45vw;
+                }
+              }
+            }
+          }
+          &:hover {
+            .support-dropdown {
+              display: flex;
+              padding-left: 0;
+              flex-direction: column;
+              gap: 1vw;
+              padding-inline: 1vw;
+              justify-content: space-evenly;
+              color: $--bs-dark;
+
+              .dropdown-item {
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+            .arrow-down {
+              transition: all 0.6s ease-in-out;
+              transform: rotate(-180deg);
+            }
+          }
+        }
+        .header-list-item {
+          display: flex;
+          align-items: center;
+          font-size: 0.8rem;
+          font-weight: 600;
+          cursor: pointer;
+          padding-inline: 1rem;
+          transition: 0.3s;
+          gap: 0.3vw;
+
+          &:hover {
+            padding-block: 0;
+            background-color: $--bs-lila;
+            border-radius: 1rem;
+            color: $--bs-purple;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 451px) and (max-width: 900px) {
+  .header-list {
+    display: none !important;
+  }
+  .header-button {
+    display: none !important;
+  }
+  .header-container {
+    justify-content: flex-start !important;
+
+    .logo {
+      width: 27vw !important;
+      padding-top: 3rem !important;
+    }
+  }
+}
