@@ -1,3 +1,11 @@
-.App {
-  text-align: center;
+@import "./styles/colors.scss";
+
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $--bs-dark;
+  background-color: #ffff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
