@@ -1,0 +1,284 @@
+@import "../../styles/colors.scss";
+
+.footer {
+  background-color: #fcfaff;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .footer-title {
+    display: flex;
+    background: linear-gradient(
+      90.55deg,
+      $--bs-purple1 -3.69%,
+      $--bs-purple1 -3.67%,
+      $--bs-fusia 100.46%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3.1vw;
+    font-weight: 600;
+    margin-bottom: 0;
+    padding-top: 4vh;
+
+    .title-icon {
+      width: 3.5vw;
+      margin-bottom: 1vw;
+      margin-left: 1vw;
+    }
+  }
+  .footer-subtitle {
+    font-size: 1vw;
+    font-weight: 375;
+    color: #b3acb8;
+  }
+  .footer-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 3vh;
+    align-items: baseline;
+    background-color: #fcfaff;
+    gap: 15vw;
+    margin-bottom: 5vh;
+
+    .menu-item-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .item-logo {
+        margin-top: 1.4vh;
+        width: 14vw;
+      }
+      .item-subtitle {
+        font-size: 1vw;
+        font-weight: 375;
+        color: #b3acb8;
+      }
+    }
+    .menu-item-2 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .first-item {
+        text-decoration: none;
+        color: #240044;
+        font-size: 1.2vw;
+        font-weight: 600;
+        margin-top: 1.4vh;
+      }
+      .a-item {
+        text-decoration: none;
+        color: #b3acb8;
+        font-size: 1vw;
+        margin-top: 1.4vh;
+
+        &:hover {
+          color: #240044;
+        }
+      }
+    }
+
+    .menu-item-4 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1vw;
+
+      .item-text {
+        color: #b3acb8;
+        font-size: 1vw;
+      }
+      .item-icon {
+        color: #b3acb8;
+
+        &:hover {
+          color: #7f00ff;
+        }
+      }
+    }
+  }
+
+  .footer-button {
+    background: linear-gradient(#7f00ff, #8f26eb);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 16.8vw;
+    height: 3.6vw;
+    margin-top: 3vh;
+    margin-bottom: 8vh;
+    border-radius: 1.5rem;
+    color: $--bs-white;
+
+    &:hover {
+      .button-icon {
+        -webkit-animation: spin 700ms linear infinite,
+          moveLeftToRight 2s linear infinite;
+        -moz-animation: spin 700ms linear infinite,
+          moveLeftToRight 2s linear infinite;
+        -ms-animation: spin 700ms linear infinite,
+          moveLeftToRight 2s linear infinite;
+        animation: spin 700ms linear infinite,
+          moveLeftToRight 2s linear infinite;
+
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;
+
+        position: relative;
+        left: 0;
+      }
+      @-ms-keyframes spin {
+        from {
+          -ms-transform: rotate(0deg);
+        }
+        to {
+          -ms-transform: rotate(360deg);
+        }
+      }
+      @-moz-keyframes spin {
+        from {
+          -moz-transform: rotate(0deg);
+        }
+        to {
+          -moz-transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @-moz-keyframes moveLeftToRight {
+        0% {
+          left: 0px;
+        }
+        50% {
+          left: 3.2vw;
+        }
+      }
+      @-ms-keyframes moveLeftToRight {
+        0% {
+          left: 0px;
+        }
+        50% {
+          left: 3.2vw;
+        }
+      }
+      @keyframes moveLeftToRight {
+        0% {
+          left: 0px;
+        }
+        50% {
+          left: 3.2vw;
+        }
+      }
+      @-webkit-keyframes moveLeftToRight {
+        0% {
+          left: 0px;
+        }
+        50% {
+          left: 3.2vw;
+        }
+      }
+    }
+
+    .button-icon {
+      margin-right: 4.2%;
+      background-color: #fff;
+      border-radius: 100px;
+      padding: 0.6rem;
+      text-align: center;
+      font-size: 0.00001vw;
+      size: 1vw;
+      .icon-logo {
+        width: 1vw;
+      }
+    }
+    .button-text {
+      font-weight: 500;
+      font-size: 1.1vw;
+      display: flex;
+    }
+  }
+}
+@media only screen and (min-width: 451px) and (max-width: 900px) {
+  .footer-title {
+    font-size: 6vw !important;
+    padding-top: 0 !important;
+    align-items: center !important;
+    .title-icon {
+      width: 6vw !important;
+      height: 6vw !important;
+    }
+  }
+  .footer-subtitle {
+    font-size: 2.5vw !important;
+  }
+  .footer-menu {
+    width: 100% !important;
+    justify-content: space-evenly !important;
+  }
+  .menu-item-1 {
+    .item-subtitle {
+      font-size: 2vw !important;
+      font-weight: 375 !important;
+    }
+    .item-logo {
+      width: 20vw !important;
+    }
+  }
+  .menu-item-2 {
+    .first-item {
+      font-size: 2.5vw !important;
+    }
+    .a-item {
+      font-size: 2.5vw !important;
+    }
+  }
+  .menu-item-4 {
+    display: none !important;
+  }
+  .footer-button {
+    width: 42vw !important;
+    height: 8vw !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-image: linear-gradient(#7f00ff, #8f26eb) !important;
+    border-radius: 230px !important;
+    margin: 4vw auto 14vw !important;
+    cursor: pointer !important;
+    .icon-logo {
+      width: 2.6vw !important;
+    }
+    .button-icon {
+      margin-left: 1vw;
+    }
+    .button-text {
+      color: #fff !important;
+      font-weight: 500 !important;
+      font-size: 2.7vw !important;
+      display: flex !important;
+    }
+    .icon {
+      font-size: 4vw !important;
+      padding-right: 1vw;
+    }
+  }
+}
